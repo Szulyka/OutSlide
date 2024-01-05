@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OutSlide.MainPage">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Offset="0" Color="RoyalBlue" />
+            <GradientStop Offset="1" Color="Magenta" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    
+    <Grid>
+        <ScrollView>
+            <VerticalStackLayout Spacing="25" VerticalOptions="Start">
+                <Label Text="Keress rá egy városra!" FontSize="32" HorizontalOptions="Center" TextColor="White"/>
+                <StackLayout Grid.Row="1" Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                    <Entry x:Name="_kereses" Completed="_keresesDone" HorizontalOptions="FillAndExpand"/>
+                    <Button x:Name="Search" Text="🔎" FontSize="32" Clicked="_keresesDone" HorizontalOptions="End" BackgroundColor="Transparent" />
+                    
+                </StackLayout>
+                <Label x:Name="city" Text="Város:" FontSize="32" HorizontalOptions="Center" TextColor="White"/>
+                <Label x:Name="temp" Text="Hőmérséklet:" FontSize="40" HorizontalOptions="Center" TextColor="White"/>
+                <Button Text="Fotózd le a jelenlegi időjárást!" Clicked="TakePhotoClicked" HorizontalOptions="Center"/>
+                <BoxView HeightRequest="0" />
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <StackLayout Grid.Row="1" Orientation="Horizontal" VerticalOptions="EndAndExpand" BackgroundColor="White">
+            <Button Text="🌧️" FontSize="32" Clicked="GoToPage2" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" />
+            <Button Text="🍃" FontSize="32" Clicked="GoToPage1" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" />
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
